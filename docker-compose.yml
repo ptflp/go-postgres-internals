@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432" # Проброс порта PostgreSQL на локальный хост
+    environment:
+      POSTGRES_DB: mydatabase     # Замените на имя вашей базы данных
+      POSTGRES_USER: myuser       # Замените на ваше имя пользователя
+      POSTGRES_PASSWORD: mypassword # Замените на ваш пароль
+    volumes:
+      - ./data:/var/lib/postgresql/data # Для сохранения данных между запусками
